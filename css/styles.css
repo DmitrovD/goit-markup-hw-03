@@ -7,12 +7,55 @@
   --contex-bgc-color: #2f303a;
   --secondary-bgc-color: #f5f4fa;
   --low-opacity-text: rgba(255, 255, 255, 0.6);
+  --card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  --hover-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 body {
   font-family: Roboto, sans-serif;
   color: var(--prime-tex-color);
   background-color: var(--white-prime-bgc);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    outline: 1px solid red; 
+}
+
+.section{
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 .list {
@@ -39,6 +82,8 @@ body {
 /*-----ШАПКА-----*/
 
 .logo-site {
+  margin-right: 93px;
+
   color: var(--accent-blue-color);
   font-family: Raleway, sans-serif;
   font-size: 26px;
@@ -49,6 +94,36 @@ body {
 
 .logo-second-part {
   color: #000000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-header {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ececec;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav-list {
+  display: flex;
+}
+
+.site-nav-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.site-nav-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .site-nav-link {
@@ -63,6 +138,20 @@ body {
 .site-nav-link:hover,
 .site-nav-link:focus {
   color: var(--accent-blue-color);
+}
+
+.contact-list {
+  display: flex;
+  margin-left: auto;
+}
+
+.contact-item:not(:first-child) {
+  margin-left: 50px;
+}
+
+.contacts-link {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .contact-link {
@@ -81,7 +170,20 @@ body {
 /*-------ФУТЕР-------*/
 
 .footer {
+  padding: 60px 0;
+
   background-color: var(--contex-bgc-color);
+}
+.footer-list {
+display: inline-block;
+}
+
+.footer-item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.footer-address {
+  margin-top: 20px;
 }
 
 .logo-another-part {
@@ -90,6 +192,7 @@ body {
 
 .footer-link-location {
   color: var(--white-text-color);
+  font-style: normal;
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
@@ -97,6 +200,7 @@ body {
 
 .footer-link {
   color: var(--low-opacity-text);
+  font-style: normal;
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
@@ -104,7 +208,19 @@ body {
 
 /* портфолио */
 
+.filter-project-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.filter-project-item:not(:first-child) {
+  margin-left: 8px; 
+}
+
 .react-btt {
+  padding: 6px 22px;
+
   background-color: var(--secondary-bgc-color);
   color: var(--prime-tex-color);
   font-weight: 500;
@@ -115,18 +231,34 @@ body {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  
 }
 
 .react-btt:hover,
 .react-btt:focus {
   background-color: var(--accent-blue-color);
   color: var(--white-prime-bgc);
+  box-shadow: var(--hover-shadow);
+}
+
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.works-item {
+  flex-basis: calc(100% / 3 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
 .works-title {
   color: var(--prime-tex-color);
   font-weight: 700;
   font-size: 18px;
+  margin-bottom: 4px;
   line-height: 2;
   letter-spacing: 0.06em;
 }
@@ -138,10 +270,19 @@ body {
   letter-spacing: 0.03em;
 }
 
+.projects-info {
+  padding: 20px 24px;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
 /*-----СТУДИЯ-----*/
 /* герой */
 .hero-section {
+  padding: 200px 0; 
   background-color: var(--contex-bgc-color);
+text-align: center;
 }
 
 .hero-title {
@@ -169,6 +310,13 @@ body {
 .hero-bttn:hover,
 .hero-bttn:focus {
   background-color: #188ce8;
+}
+
+.stem-list {
+display: flex;
+flex-wrap: wrap;
+/* margin-left: -30px;
+margin-top: -30px; */
 }
 
 .stem-title {
